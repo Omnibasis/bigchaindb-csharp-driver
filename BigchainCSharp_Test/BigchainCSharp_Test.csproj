@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssemblyName>BigchainCSharp_Test</AssemblyName>
+    <RootNamespace>BigchainCSharp_Test</RootNamespace>
+    <StartupObject>Omnibasis.BigchainCSharp_Test.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Nito.AsyncEx.Context" Version="5.0.0" />
+    <PackageReference Include="Omnibasis.BigchainCSharp" Version="1.0.0" />
+  </ItemGroup>
+
+</Project>
