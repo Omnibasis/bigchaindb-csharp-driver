@@ -8,7 +8,7 @@ namespace Omnibasis.BigchainCSharp_WS_Test
         static void Main(string[] args)
         {
             BigchainDbConfigBuilder
-                .baseUrl("https://test.bigchaindb.com/")
+                .baseUrl("https://test.ipdb.io/")
              .webSocketMonitor(new ValidTransactionMessageHandler())
              .setup();
 

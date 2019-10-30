@@ -42,7 +42,6 @@ namespace BigchainCSharp_XUnitTest
                 .buildAndSignOnly(BlockchainAccount.publicKeyFromHex(publicKey), BlockchainAccount.privateKeyFromHex(privateKey));
 
             transaction.Version.ShouldBe("2.0");
-            transaction.Signed.ShouldBe(true);
             transaction.Operation.ShouldBe("TRANSFER");
         }
 
@@ -294,38 +293,7 @@ namespace BigchainCSharp_XUnitTest
 
             }
 
-            //// Describe the output you are fulfilling on spent outputs
-            //FulFill spendFrom2a = new FulFill();
-            //// the asset's ID is equal to the ID of the transaction that created it
-            //spendFrom2a.TransactionId = transferTransaction3.Data.Id; // list[0].TransactionId;
-            //spendFrom2a.OutputIndex = 0;
-            //Details details2a = null;
-            //TestToken transferData2a = new TestToken();
-            //transferData2a.token = "To my dog named Bingo";
-            //transferData2a.number_tokens = amount;
-
-            //// Use the previous transaction's asset and TRANSFER it
-            //var build3a = BigchainDbTransactionBuilder<Asset<string>, TestToken>.
-            //    init().
-            //    addMetaData(transferData2a).
-            //    addInput(details2a, spendFrom2a, dogAccount.PublicKey).
-            //    addOutput(amountLeft.ToString(), publicKeyObj).
-            //    addOutput(amount.ToString(), dogAccount.PublicKey).
-            //    addAssets(createTransaction.Data.Id).
-            //    operation(Operations.TRANSFER).
-            //    buildAndSignOnly(dogAccount.PublicKey, dogAccount.Key);
-
-            //var transferTransaction3a = await TransactionsApi<Asset<string>, TestToken>.sendTransactionAsync(build3a);
-            //transferTransaction3.Data.ShouldNotBe(null);
-
-            //if (transferTransaction3 != null)
-            //{
-            //    string tran2 = transferTransaction3.Data.Id;
-            //    var testTran2 = await TransactionsApi<object, object>.getTransactionByIdAsync(tran2);
-            //    testTran2.ShouldNotBe(null);
-
-            //}
-
+    
             // now dog wants to share with puppy
             BlockchainAccount puppyAccount = new BlockchainAccount();
             Details details3 = null;

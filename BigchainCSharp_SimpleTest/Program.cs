@@ -30,13 +30,13 @@ namespace BigchainCSharp_SimpleTest
 			var conn1Config = new Dictionary<string, object>();
 
 			//config connection 1
-			conn1Config.Add("baseUrl", "https://test.bigchaindb.com");
+			conn1Config.Add("baseUrl", "https://test.ipdb.io");
 			BlockchainConnection conn1 = new BlockchainConnection(conn1Config);
 
 			var conn2Config = new Dictionary<string, object>();
 			var headers2 = new Dictionary<string, string>();
 			//config connection 2
-			conn2Config.Add("baseUrl", "https://test.bigchaindb.com");
+			conn2Config.Add("baseUrl", "https://test.ipdb.io");
 			BlockchainConnection conn2 = new BlockchainConnection(conn2Config);
 
 			//add connections
@@ -52,7 +52,7 @@ namespace BigchainCSharp_SimpleTest
 
 			// single connection
 			var builder = BigchainDbConfigBuilder
-				.baseUrl("https://test.bigchaindb.com");
+				.baseUrl("https://test.ipdb.io");
 			
 			if (!AsyncContext.Run(() => builder.setup()))
 			{

@@ -266,7 +266,6 @@ namespace BigchainCSharp_XUnitTest
             //string info = transaction.toHashInput();
             transaction.Version.ShouldBe("2.0");
             transaction.Asset.Data.ShouldNotBe(null);
-            transaction.Signed.ShouldBe(true);
             transaction.Operation.ShouldBe("CREATE");
 
             Input input = transaction.Inputs[0];
@@ -333,7 +332,6 @@ namespace BigchainCSharp_XUnitTest
                 .operation(Operations.CREATE).buildOnly(edDSAPublicKey);
 
             transaction.Version.ShouldBe("2.0");
-            transaction.Signed.ShouldBe(null);
             transaction.Operation.ShouldBe("CREATE");
 
             Input input = transaction.Inputs[0];

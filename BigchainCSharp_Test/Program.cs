@@ -26,14 +26,14 @@ namespace Omnibasis.BigchainCSharp_Test
             var headers1 = new Dictionary<string, string>();
 
             //config connection 1
-            conn1Config.Add("baseUrl", "https://test.bigchaindb.com/");
+            conn1Config.Add("baseUrl", "https://test.ipdb.io/");
             conn1Config.Add("headers", headers1);
             BlockchainConnection conn1 = new BlockchainConnection(conn1Config);
 
             var conn2Config = new Dictionary<string, object>();
             var headers2 = new Dictionary<string, string>();
             //config connection 2
-            conn2Config.Add("baseUrl", "https://test.bigchaindb.com/");
+            conn2Config.Add("baseUrl", "https://test.ipdb.io/");
             conn2Config.Add("headers", headers2);
             BlockchainConnection conn2 = new BlockchainConnection(conn2Config);
 
@@ -50,7 +50,7 @@ namespace Omnibasis.BigchainCSharp_Test
 
             // single connection
             //var builder = BigchainDbConfigBuilder
-            //    .baseUrl("https://test.bigchaindb.com/")
+            //    .baseUrl("https://test.ipdb.io/")
             //    .addToken("app_id", "204d77e0")
             //    .addToken("app_key", "910c0943ce05e76b568395986d3b33d9");
 
