@@ -1,19 +1,21 @@
 <!---
-Copyright Omnibasis Inc
+Copyright Omnibasis, Inc.
 --->
 
 # Microsoft Net.core and Microsoft Dot.Net Driver for BigchainDB
 
+If you do not want to write code to run Blockchain, visit [omnibasis.com](https://omnibasis.com/) and use our simple to use user interface to build your distributed application on Blockchain.
+
 Looking to build Blockchain solution utilizing Microsoft .Net Core or .Net Framework? Omnibasis developed Microsoft drivers for BigchainDB.
 
-**Please note**: This driver is compatible with .Net Core 2.1 and later, and .Net Framework 4.6.x and later. It might work with earlier versions but was not tested.
+**Please note**: This driver is compatible with .Net Core 2.0 and later, and .Net Framework 4.6.x and later. It might work with earlier versions but was not tested.
 
 
 ## Compatibility
 
-| BigchainDB Server | BigchainDB Microsoft .Net Core and .Net Framework Driver |
-| ----------------- |------------------------------|
-| `2.x`             | `2.1`                        |
+| BigchainDB Server | Microsoft .Net Core and .Net Framework Driver |
+| ----------------- |-----------------------------------------------|
+| `2.x`             | `2.x`                                         |
 
 ## Contents
 
@@ -201,50 +203,7 @@ Performing a TRANSFER transaction in BigchainDB changes an asset's ownership (or
 
     }
 ```
-### Example: Combine an Asset
 
-You can combine two records of the sames assets into one with TRANSFER transaction and 1 or more inputs:
-
-```c#
-    / at this point, puppy has 2 transactions, with 100 tokens each. we want to combine those into
-            Details details6 = null;
-            TestToken transferData6 = new TestToken();
-            transferData5.token = "Puppy combined account";
-            transferData5.number_tokens = amount5 + topuppy;
-            // we need to spend 2 previous transactions and create new one
-            FulFill spendFromA = new FulFill();
-            // the asset's ID is equal to the ID of the transaction that created it
-            spendFromA.TransactionId = transferTransaction4.Data.Id; // list[0].TransactionId;
-            spendFromA.OutputIndex = 1;
-
-            FulFill spendFromB = new FulFill();
-            // the asset's ID is equal to the ID of the transaction that created it
-            spendFromB.TransactionId = transferTransaction5.Data.Id; // list[0].TransactionId;
-            spendFromB.OutputIndex = 1;
-            var combinedAmount = amount5 + topuppy;
-            var build6 = BigchainDbTransactionBuilder<Asset<string>, TestToken>.
-               init().
-               addMetaData(transferData5).
-               addInput(details6, spendFromA, puppyAccount.PublicKey).
-               addInput(details6, spendFromB, puppyAccount.PublicKey).
-               addOutput(combinedAmount.ToString(), puppyAccount.PublicKey).
-               addAssets(createTransaction.Data.Id).
-               operation(Operations.TRANSFER).
-               buildAndSignOnly(puppyAccount.PublicKey, puppyAccount.Key);
-
-            var transferTransaction6 = await TransactionsApi<Asset<string>, TestToken>.sendTransactionAsync(build6);
-            Thread.Sleep(5000);
-            transferTransaction6.Data.ShouldNotBe(null);
-            transferTransaction6.Data.Outputs[0].Amount.ShouldBe("200");
-
-            if (transferTransaction6 != null)
-            {
-                string tran6 = transferTransaction6.Data.Id;
-                var testTran6 = await TransactionsApi<object, object>.getTransactionByIdAsync(tran6);
-                testTran6.ShouldNotBe(null);
-
-            }
-```
 ### Example: Setup Config with WebSocket Listener
 
 ```c#
