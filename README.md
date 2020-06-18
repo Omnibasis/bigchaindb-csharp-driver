@@ -2,7 +2,7 @@
 Copyright Omnibasis, Inc.
 --->
 
-# Microsoft Net.core and Microsoft Dot.Net Driver for BigchainDB
+# Microsoft Net.core and Microsoft Dot.Net Test Examples for Omnibasis BigchainDB Driver
 
 If you do not want to write code to run Blockchain, visit [omnibasis.com](https://omnibasis.com/) and use our simple to use user interface to build your distributed application on Blockchain.
 
