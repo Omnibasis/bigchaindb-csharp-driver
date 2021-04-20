@@ -153,7 +153,7 @@ namespace BigchainCSharp_SimpleTest
 				}
 				else if (transferTransaction != null)
 				{
-					Console.WriteLine("Failed to send transaction: " + createTransaction.Messsage.Message);
+					Console.WriteLine("Failed to send transaction: " + transferTransaction.Messsage.Message);
 				}
 
 			}
